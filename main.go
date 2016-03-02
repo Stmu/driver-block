@@ -33,6 +33,4 @@ func main() {
 			spew.Dump("incoming", message)
 		}
 	}()
-
-	return nil
 }
