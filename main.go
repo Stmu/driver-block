@@ -13,17 +13,17 @@ func main() {
 	port, err := arduino.Connect(path, speed)
 
 	if err != nil {
-		log.Fatalf("Couldn't connect to arduino: %s", err)
+		fmt.Printf("Couldn't connect to arduino: %s", err)
 	}
 
 	version, err := port.GetVersion()
 
 	if err != nil {
-		log.Warningf("Failed to get version from arduino. Continuing anyway. #YOLO.")
+		fmt.Printf("Failed to get version from arduino. Continuing anyway. #YOLO.")
 	}
 
 	if version != requiredVersion {
-		log.Warningf("Unknown arduino version. Expected:%s Got: %s", requiredVersion, version)
+		fmt.Printf("Unknown arduino version. Expected:%s Got: %s", requiredVersion, version)
 	}
 
 	// NewLight(d, 1007, "Nina's Eyes", port)
