@@ -145,7 +145,8 @@ func (a *Arduino) Write(message Message) ([]DeviceData, error) {
 	case ack := <-a.acks:
 		return ack, nil
 	case <-time.After(time.Second * 2):
-		return nil, fmt.Printf("Arduino write timed out after 2 seconds")
+		fmt.Printf("Arduino write timed out after 2 seconds")
+		return nil, nil
 	}
 
 }
