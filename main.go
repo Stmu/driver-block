@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/davecgh/go-spew/spew"
   "github.com/stmu/driver-block/arduino"
+  "fmt"
 )
 
 func main() {
