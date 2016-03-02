@@ -4,8 +4,6 @@ import (
 	"driver-block/arduino"
 
 	"github.com/davecgh/go-spew/spew"
-	"github.com/ninjasphere/go-ninja/config"
-	"github.com/ninjasphere/go-ninja/support"
 )
 
 func main() {
