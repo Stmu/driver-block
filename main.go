@@ -17,18 +17,18 @@ func main() {
 		fmt.Printf("Couldn't connect to arduino: %s", err)
 	}
 
-	version, err := port.GetVersion()
+	// version, err := port.GetVersion()
 
-	if err != nil {
-		fmt.Printf("Failed to get version from arduino. Continuing anyway. #YOLO.")
-	}
+	// if err != nil {
+	// 	fmt.Printf("Failed to get version from arduino. Continuing anyway. #YOLO.")
+	// }
 
 	// if version != requiredVersion {
 	// 	fmt.Printf("Unknown arduino version. Expected:%s Got: %s", requiredVersion, version)
 	// }
 
-	// NewLight(d, 1007, "Nina's Eyes", port)
-	// NewLight(d, 999, "Status Light", port)
+	 NewLight(d, 1007, "Nina's Eyes", port)
+	 NewLight(d, 999, "Status Light", port)
 
 	go func() {
 		for message := range port.Incoming {
