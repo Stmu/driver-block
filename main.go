@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/davecgh/go-spew/spew"
+  "github.com/ninjasphere/go-ninja/support"
 	"github.com/stmu/driver-block/arduino"
 )
 
@@ -42,4 +43,6 @@ func main() {
 			spew.Dump("incoming", message)
 		}
 	}()
+  
+  support.WaitUntilSignal()
 }
