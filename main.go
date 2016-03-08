@@ -32,7 +32,7 @@ func main() {
 	//  NewLight(d, 999, "Status Light", port)
 	
   port.OnDeviceData(func(data arduino.DeviceData) {
-		if data.D == D {
+		if data.D == 1007 {
 			spew.Dump("Light Data!", data)
 		}
 	})
