@@ -10,7 +10,7 @@ import (
 	"github.com/ninjasphere/go-ninja/model"
 )
 
-func NewLight(driver *Driver, D int, name string, port *arduino.Arduino) error {
+func NewLight(D int, name string, port *arduino.Arduino) error {
 	light, err := devices.CreateLightDevice(driver, &model.Device{
 		NaturalID:     fmt.Sprintf("%s-%d", config.Serial(), D),
 		NaturalIDType: "block-arduino",
@@ -20,7 +20,7 @@ func NewLight(driver *Driver, D int, name string, port *arduino.Arduino) error {
 			"ninja:productType":  "Light",
 			"ninja:thingType":    "light",
 		},
-	}, driver.Conn)
+	})
 
 	if err != nil {
 		log.FatalError(err, "Could not create light device")
